@@ -20,8 +20,25 @@ public interface ProductService {
 
     //get by id
     ProductDto get(String productId);
+<<<<<<< HEAD
     //search
     PageableResponse<ProductDto> search(String subTitle,int pageNumber,int pageSize,String sortBy,String sortDir);
 
     PageableResponse<ProductDto> getAllLive(int pageNumber,int pageSize,String sortBy,String sortDir);
+=======
+
+    //search
+    PageableResponse<ProductDto> search(String subTitle,int pageNumber,int pageSize,String sortBy,String sortDir);
+
+    //get all live
+    PageableResponse<ProductDto> getAllLive(int pageNumber,int pageSize,String sortBy,String sortDir);
+
+    //create with category
+    ProductDto createWithCategory(ProductDto productDto ,String categoryId);
+
+    //assign product to category
+    ProductDto updateCategory(String productId ,String categoryId);
+
+    PageableResponse<ProductDto> getAllOfCategory(String categoryId,int pageNumber,int pageSize,String sortBy,String sortDir);
+>>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 }

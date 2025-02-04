@@ -98,7 +98,11 @@
 				<configuration>
 					<annotationProcessorPaths>
 						<path>
+<<<<<<< HEAD
 							<groupId>org.projectlombok</groupId>
+=======
+							<groupId>org.project-lombok</groupId>
+>>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 							<artifactId>lombok</artifactId>
 						</path>
 					</annotationProcessorPaths>
@@ -110,7 +114,11 @@
 				<configuration>
 					<excludes>
 						<exclude>
+<<<<<<< HEAD
 							<groupId>org.projectlombok</groupId>
+=======
+							<groupId>org.project-lombok</groupId>
+>>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>

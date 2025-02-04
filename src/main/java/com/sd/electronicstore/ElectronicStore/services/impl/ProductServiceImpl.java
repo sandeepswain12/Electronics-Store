@@ -1,11 +1,24 @@
 package com.sd.electronicstore.ElectronicStore.services.impl;
 
+<<<<<<< HEAD
 import com.sd.electronicstore.ElectronicStore.dtos.PageableResponse;
 import com.sd.electronicstore.ElectronicStore.dtos.ProductDto;
 import com.sd.electronicstore.ElectronicStore.entities.Product;
 import com.sd.electronicstore.ElectronicStore.exceptions.ResourceNotFoundException;
 import com.sd.electronicstore.ElectronicStore.helper.Helper;
 import com.sd.electronicstore.ElectronicStore.repositories.ProductRepository;
+=======
+import com.sd.electronicstore.ElectronicStore.dtos.CategoryDto;
+import com.sd.electronicstore.ElectronicStore.dtos.PageableResponse;
+import com.sd.electronicstore.ElectronicStore.dtos.ProductDto;
+import com.sd.electronicstore.ElectronicStore.entities.Category;
+import com.sd.electronicstore.ElectronicStore.entities.Product;
+import com.sd.electronicstore.ElectronicStore.exceptions.ResourceNotFoundException;
+import com.sd.electronicstore.ElectronicStore.helper.Helper;
+import com.sd.electronicstore.ElectronicStore.repositories.CategoryRepository;
+import com.sd.electronicstore.ElectronicStore.repositories.ProductRepository;
+import com.sd.electronicstore.ElectronicStore.services.CategoryService;
+>>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 import com.sd.electronicstore.ElectronicStore.services.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +49,13 @@ public class ProductServiceImpl implements ProductService {
     @Value("${product.image.path}")
     private String imageUploadPath;
 
+<<<<<<< HEAD
+=======
+    @Autowired
+    CategoryRepository categoryRepository;
+    @Autowired
+    private ModelMapper modelMapper;
+>>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 
     @Override
     public ProductDto create(ProductDto productDto) {
@@ -109,4 +129,37 @@ public class ProductServiceImpl implements ProductService {
         PageableResponse<ProductDto> response = Helper.getPageableResponse(page,ProductDto.class);
         return response;
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public ProductDto createWithCategory(ProductDto productDto, String categoryId) {
+        Category category = categoryRepository.findById(categoryId).orElseThrow(()->new ResourceNotFoundException("category not found with this "+categoryId+ " id"));
+        String productId = UUID.randomUUID().toString();
+        Product product = modelMapper.map(productDto,Product.class);
+        product.setProductId(productId);
+        product.setAddedDate(new Date());
+        product.setCategory(category);
+        Product savedProduct = productRepository.save(product);
+        return mapper.map(savedProduct,ProductDto.class);
+    }
+
+    @Override
+    public ProductDto updateCategory(String productId, String categoryId) {
+        Category category = categoryRepository.findById(categoryId).orElseThrow(()->new ResourceNotFoundException("category not found with this "+categoryId+ " id"));
+        Product product = productRepository.findById(productId).orElseThrow(()->new ResourceNotFoundException("product with this "+productId+ " id not found"));
+        product.setCategory(category);
+        Product updatedProduct = productRepository.save(product);
+        return modelMapper.map(updatedProduct,ProductDto.class);
+    }
+
+    @Override
+    public PageableResponse<ProductDto> getAllOfCategory(String categoryId, int pageNumber, int pageSize, String sortBy, String sortDir) {
+        Category category = categoryRepository.findById(categoryId).orElseThrow(()->new ResourceNotFoundException("category not found with this "+categoryId+ " id"));
+        Sort sort = (sortDir.equalsIgnoreCase("desc")) ? (Sort.by(sortBy).descending()):(Sort.by(sortBy).ascending());
+        Pageable pageable = PageRequest.of(pageNumber-1,pageSize,sort);
+        Page<Product> page = productRepository.findByCategory(category,pageable);
+        return Helper.getPageableResponse(page,ProductDto.class);
+    }
+>>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 }
