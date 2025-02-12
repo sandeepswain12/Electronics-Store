@@ -15,19 +15,15 @@ public class ProductDto {
     private boolean live;
     private boolean stock;
     private String productImage;
-<<<<<<< HEAD
-=======
     private CategoryDto category;
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
+
 
     public ProductDto() {
     }
 
-<<<<<<< HEAD
-    public ProductDto(String productId, String title, String description, int price, int discountedPrice, int quantity, Date addedDate, boolean live, boolean stock, String productImage) {
-=======
+
     public ProductDto(String productId, String title, String description, int price, int discountedPrice, int quantity, Date addedDate, boolean live, boolean stock, String productImage, CategoryDto category) {
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
+
         this.productId = productId;
         this.title = title;
         this.description = description;
@@ -38,10 +34,7 @@ public class ProductDto {
         this.live = live;
         this.stock = stock;
         this.productImage = productImage;
-<<<<<<< HEAD
-=======
         this.category = category;
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
     }
 
     public String getProductId() {
@@ -123,8 +116,6 @@ public class ProductDto {
     public void setProductImage(String productImage) {
         this.productImage = productImage;
     }
-<<<<<<< HEAD
-=======
 
     public CategoryDto getCategory() {
         return category;
@@ -133,5 +124,4 @@ public class ProductDto {
     public void setCategory(CategoryDto category) {
         this.category = category;
     }
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 }

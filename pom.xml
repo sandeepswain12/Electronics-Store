@@ -70,13 +70,17 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.24</version> <!-- Use the latest version -->
-			<scope>provided</scope>
+			<optional>true</optional>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.modelmapper</groupId>
@@ -98,11 +102,7 @@
 				<configuration>
 					<annotationProcessorPaths>
 						<path>
-<<<<<<< HEAD
 							<groupId>org.projectlombok</groupId>
-=======
-							<groupId>org.project-lombok</groupId>
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 							<artifactId>lombok</artifactId>
 						</path>
 					</annotationProcessorPaths>
@@ -114,11 +114,7 @@
 				<configuration>
 					<excludes>
 						<exclude>
-<<<<<<< HEAD
 							<groupId>org.projectlombok</groupId>
-=======
-							<groupId>org.project-lombok</groupId>
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>

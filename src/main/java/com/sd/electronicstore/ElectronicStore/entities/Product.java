@@ -27,11 +27,9 @@ public class Product {
     public Product() {
     }
 
-<<<<<<< HEAD
-    public Product(String productId, String title, String description, int price, int discountedPrice, int quantity, Date addedDate, boolean live, boolean stock, String productImage) {
-=======
+
     public Product(String productId, String title, String description, int price, int discountedPrice, int quantity, Date addedDate, boolean live, boolean stock, String productImage, Category category) {
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
+
         this.productId = productId;
         this.title = title;
         this.description = description;
@@ -42,10 +40,8 @@ public class Product {
         this.live = live;
         this.stock = stock;
         this.productImage = productImage;
-<<<<<<< HEAD
-=======
         this.category = category;
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
+
     }
 
     public String getProductId() {
@@ -127,8 +123,6 @@ public class Product {
     public void setProductImage(String productImage) {
         this.productImage = productImage;
     }
-<<<<<<< HEAD
-=======
 
     public Category getCategory() {
         return category;
@@ -137,5 +131,5 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
+
 }

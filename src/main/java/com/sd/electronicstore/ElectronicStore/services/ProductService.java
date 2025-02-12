@@ -3,7 +3,7 @@ package com.sd.electronicstore.ElectronicStore.services;
 import com.sd.electronicstore.ElectronicStore.dtos.PageableResponse;
 import com.sd.electronicstore.ElectronicStore.dtos.ProductDto;
 
-import java.util.List;
+
 
 public interface ProductService {
     //create
@@ -20,13 +20,7 @@ public interface ProductService {
 
     //get by id
     ProductDto get(String productId);
-<<<<<<< HEAD
-    //search
-    PageableResponse<ProductDto> search(String subTitle,int pageNumber,int pageSize,String sortBy,String sortDir);
-
-    PageableResponse<ProductDto> getAllLive(int pageNumber,int pageSize,String sortBy,String sortDir);
-=======
-
+    
     //search
     PageableResponse<ProductDto> search(String subTitle,int pageNumber,int pageSize,String sortBy,String sortDir);
 
@@ -40,5 +34,4 @@ public interface ProductService {
     ProductDto updateCategory(String productId ,String categoryId);
 
     PageableResponse<ProductDto> getAllOfCategory(String categoryId,int pageNumber,int pageSize,String sortBy,String sortDir);
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 }

@@ -1,13 +1,13 @@
 package com.sd.electronicstore.ElectronicStore.services.impl;
 
-<<<<<<< HEAD
+
 import com.sd.electronicstore.ElectronicStore.dtos.PageableResponse;
 import com.sd.electronicstore.ElectronicStore.dtos.ProductDto;
 import com.sd.electronicstore.ElectronicStore.entities.Product;
 import com.sd.electronicstore.ElectronicStore.exceptions.ResourceNotFoundException;
 import com.sd.electronicstore.ElectronicStore.helper.Helper;
 import com.sd.electronicstore.ElectronicStore.repositories.ProductRepository;
-=======
+
 import com.sd.electronicstore.ElectronicStore.dtos.CategoryDto;
 import com.sd.electronicstore.ElectronicStore.dtos.PageableResponse;
 import com.sd.electronicstore.ElectronicStore.dtos.ProductDto;
@@ -18,7 +18,6 @@ import com.sd.electronicstore.ElectronicStore.helper.Helper;
 import com.sd.electronicstore.ElectronicStore.repositories.CategoryRepository;
 import com.sd.electronicstore.ElectronicStore.repositories.ProductRepository;
 import com.sd.electronicstore.ElectronicStore.services.CategoryService;
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 import com.sd.electronicstore.ElectronicStore.services.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,13 +48,12 @@ public class ProductServiceImpl implements ProductService {
     @Value("${product.image.path}")
     private String imageUploadPath;
 
-<<<<<<< HEAD
-=======
+
+
     @Autowired
     CategoryRepository categoryRepository;
     @Autowired
     private ModelMapper modelMapper;
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 
     @Override
     public ProductDto create(ProductDto productDto) {
@@ -129,8 +127,8 @@ public class ProductServiceImpl implements ProductService {
         PageableResponse<ProductDto> response = Helper.getPageableResponse(page,ProductDto.class);
         return response;
     }
-<<<<<<< HEAD
-=======
+
+
 
     @Override
     public ProductDto createWithCategory(ProductDto productDto, String categoryId) {
@@ -161,5 +159,4 @@ public class ProductServiceImpl implements ProductService {
         Page<Product> page = productRepository.findByCategory(category,pageable);
         return Helper.getPageableResponse(page,ProductDto.class);
     }
->>>>>>> e4b6fe9 (added product entity and mapping the product and category)
 }
